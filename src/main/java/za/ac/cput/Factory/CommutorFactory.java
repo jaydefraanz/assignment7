@@ -1,12 +1,12 @@
 package za.ac.cput.Factory;
 
-import za.ac.cput.Domain.Commutor;
+import za.ac.cput.Domain.CommutorPkg.Commutor;
 
 public class CommutorFactory
 {
     public static Commutor getCommutor(String name, String surname,int cardNO,int credit)
     {
-        return new Commutor.Builder()
+        return new CommutorPkg.Builder()
                 .name(name)
                 .surname(surname)
                 .cardNo(cardNO)

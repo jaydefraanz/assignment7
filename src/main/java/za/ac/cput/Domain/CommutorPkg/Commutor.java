@@ -1,4 +1,4 @@
-package za.ac.cput.Domain;
+package za.ac.cput.Domain.CommutorPkg;
 
 public class Commutor {
     private String name, surname;
@@ -65,9 +65,10 @@ public class Commutor {
         }
     }
 
+
     @Override
     public String toString() {
-        return "Commutor{" +
+        return "CommutorPkg{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", cardNo=" + cardNo +
