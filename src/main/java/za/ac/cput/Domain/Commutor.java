@@ -1,7 +1,6 @@
 package za.ac.cput.Domain;
 
-public class Commutor
-{
+public class Commutor {
     private String name, surname;
     int cardNo, credit;
 
