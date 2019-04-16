@@ -1,12 +1,12 @@
 package za.ac.cput.Domain.CommutorPkg;
 
 public class Commutor {
-    private String name, surname;
+    String name, surname;
     int cardNo, credit;
 
-    private Commutor(){}
+    public Commutor(){}
 
-    private Commutor(Builder builder)
+    public Commutor(Builder builder)
     {
         this.name = builder.name;
         this.surname = builder.surname;
@@ -34,7 +34,7 @@ public class Commutor {
 
     public static class Builder
     {
-        private String name, surname;
+        String name, surname;
         int idNo, cardNo, credit;
 
         public Builder name(String name)

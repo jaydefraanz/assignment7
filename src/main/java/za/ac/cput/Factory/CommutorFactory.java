@@ -6,7 +6,7 @@ public class CommutorFactory
 {
     public static Commutor getCommutor(String name, String surname,int cardNO,int credit)
     {
-        return new CommutorPkg.Builder()
+        return new Commutor.Builder()
                 .name(name)
                 .surname(surname)
                 .cardNo(cardNO)
