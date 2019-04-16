@@ -1,8 +1,9 @@
-package za.ac.cput.Factory;
+package za.ac.cput.FactoryTest.CommutorTest;
 
 
 import org.junit.Test;
 import za.ac.cput.Domain.CommutorPkg.Commutor;
+import za.ac.cput.FactoryTest.Commutor.CommutorFactory;
 
 import static org.junit.Assert.assertTrue;
 

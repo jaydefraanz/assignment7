@@ -67,7 +67,8 @@ public class Commutor {
 
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "CommutorPkg{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +

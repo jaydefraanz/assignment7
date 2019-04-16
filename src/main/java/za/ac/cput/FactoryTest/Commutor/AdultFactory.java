@@ -1,4 +1,4 @@
-package za.ac.cput.Factory;
+package za.ac.cput.FactoryTest.Commutor;
 
 import za.ac.cput.Domain.CommutorPkg.Adult;
 
