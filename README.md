@@ -8,4 +8,4 @@ The public transportation system would require users to a have a card that would
 I would like to create an application that would calculate the balance of a user based on their distances travelled and available credit. The application would also determine whether they can board a bus again or if they should load credit.
  
 
-![](JPEG_UML_DIAGRAM.jpg)
+![](UML.png)
