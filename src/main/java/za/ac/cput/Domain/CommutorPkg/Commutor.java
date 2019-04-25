@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.CommutorPkg;
 
+import java.util.Objects;
+
 public class Commutor {
     String name, surname, cardNo;
     int credit;
@@ -76,5 +78,18 @@ public class Commutor {
                 ", cardNo=" + cardNo +
                 ", credit=" + credit +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Commutor commutor = (Commutor) o;
+        return cardNo.equals(commutor.cardNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cardNo);
     }
 }

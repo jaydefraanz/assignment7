@@ -20,13 +20,10 @@ public class CommutorRepositoryImpl implements CommutorRepository {
         return repository;
     }
 
-    @Override
-    public Set<Commutor> getAll() {
-        return null;
-    }
 
     @Override
     public Commutor create(Commutor commutor) {
+        this.commutors.add(commutor);
         return null;
     }
 
@@ -43,5 +40,10 @@ public class CommutorRepositoryImpl implements CommutorRepository {
     @Override
     public Commutor read(String s) {
         return null;
+    }
+
+    @Override
+    public Set<Commutor> getAll() {
+        return this.commutors;
     }
 }
