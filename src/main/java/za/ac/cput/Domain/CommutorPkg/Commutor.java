@@ -1,8 +1,8 @@
 package za.ac.cput.Domain.CommutorPkg;
 
 public class Commutor {
-    String name, surname;
-    int cardNo, credit;
+    String name, surname, cardNo;
+    int credit;
 
     public Commutor(){}
 
@@ -22,7 +22,7 @@ public class Commutor {
         return surname;
     }
 
-    public int getCardNo()
+    public String getCardNo()
     {
         return cardNo;
     }
@@ -35,7 +35,9 @@ public class Commutor {
     public static class Builder
     {
         String name, surname;
-        int idNo, cardNo, credit;
+        int idNo;
+        String cardNo;
+        int credit;
 
         public Builder name(String name)
         {
@@ -48,7 +50,7 @@ public class Commutor {
             return this;
         }
 
-        public Builder cardNo(int cardNo)
+        public Builder cardNo(String cardNo)
         {
             this.cardNo = cardNo;
             return  this;
