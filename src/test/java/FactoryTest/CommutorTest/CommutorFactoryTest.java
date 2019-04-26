@@ -2,7 +2,7 @@ package FactoryTest.CommutorTest;
 
 
 import org.junit.Test;
-import za.ac.cput.Domain.CommutorPkg.Commutor;
+import za.ac.cput.Domain.Commutors.Commutor;
 import za.ac.cput.Factory.Commutor.CommutorFactory;
 
 import static org.junit.Assert.assertTrue;

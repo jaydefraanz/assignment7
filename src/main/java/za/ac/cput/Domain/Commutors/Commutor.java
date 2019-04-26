@@ -1,4 +1,4 @@
-package za.ac.cput.Domain.CommutorPkg;
+package za.ac.cput.Domain.Commutors;
 
 import java.util.Objects;
 

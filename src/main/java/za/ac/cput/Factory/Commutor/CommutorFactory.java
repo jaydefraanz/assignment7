@@ -1,6 +1,6 @@
 package za.ac.cput.Factory.Commutor;
 
-import za.ac.cput.Domain.CommutorPkg.Commutor;
+import za.ac.cput.Domain.Commutors.Commutor;
 
 public class CommutorFactory
 {

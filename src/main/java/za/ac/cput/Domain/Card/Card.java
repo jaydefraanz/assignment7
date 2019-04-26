@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.Card;
 
+import java.util.Objects;
+
 public class Card
 {
     String cardNo;
@@ -34,5 +36,18 @@ public class Card
         return "Card{" +
                 "cardNo='" + cardNo + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return cardNo.equals(card.cardNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cardNo);
     }
 }

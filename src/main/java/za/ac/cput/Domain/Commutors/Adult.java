@@ -1,18 +1,14 @@
-package za.ac.cput.Domain.CommutorPkg;
+package za.ac.cput.Domain.Commutors;
 
-public class Child extends Commutor
+public class Adult extends Commutor
 {
-
-    //age is 6 - 17
+    //age is 18 and up
     int age;
-    double discount;
 
-    public Child(Builder builder)
+    public Adult(Builder builder)
     {
         super(builder);
         age = 0;
-        discount = 0.20;
-
     }
 
     public int getAge()
@@ -20,14 +16,9 @@ public class Child extends Commutor
         return age;
     }
 
-    public double getDiscount() {
-        return 0.20;
-    }
-
     public static class Builder extends Commutor.Builder
     {
         int age;
-        double discount = 0.20;
 
         public Builder age(int age)
         {
@@ -35,24 +26,19 @@ public class Child extends Commutor
             return this;
         }
 
-        public Builder discount(double discount)
-        {
-            this.discount = discount;
-            return this;
-        }
-
-        public Child build(){ return new Child(this);}
+        public Adult build() {return new Adult(this);}
     }
 
     @Override
     public String toString() {
-        return "Child{" +
+        return "Adult{" +
                 "age=" + age +
-                ", discount=" + discount +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", cardNo=" + cardNo +
                 ", credit=" + credit +
                 '}';
     }
+
+
 }
