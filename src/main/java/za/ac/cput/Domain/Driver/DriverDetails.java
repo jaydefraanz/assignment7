@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.Driver;
 
+import java.util.Objects;
+
 public class DriverDetails
 {
     String name,surname,idNo;
@@ -54,5 +56,18 @@ public class DriverDetails
                 ", surname='" + surname + '\'' +
                 ", idNo='" + idNo + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DriverDetails that = (DriverDetails) o;
+        return idNo.equals(that.idNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idNo);
     }
 }

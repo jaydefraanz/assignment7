@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.Driver;
 
+import java.util.Objects;
+
 public class DriverContact
 {
     String phone,email,address;
@@ -54,5 +56,18 @@ public class DriverContact
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DriverContact that = (DriverContact) o;
+        return phone.equals(that.phone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(phone);
     }
 }

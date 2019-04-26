@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.Driver;
 
+import java.util.Objects;
+
 public class AssignedBus
 {
     String busNo, busName, route;
@@ -56,5 +58,18 @@ public class AssignedBus
                 ", busName='" + busName + '\'' +
                 ", route='" + route + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AssignedBus that = (AssignedBus) o;
+        return busNo.equals(that.busNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(busNo);
     }
 }

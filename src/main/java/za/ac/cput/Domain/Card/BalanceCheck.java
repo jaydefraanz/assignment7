@@ -1,7 +1,8 @@
 package za.ac.cput.Domain.Card;
-
+//check if the balance in this class is an instance of PositiveBalance or ZeroBalance
 public class BalanceCheck extends Card
 {
+
     int currentBalance;
 
     public BalanceCheck() {

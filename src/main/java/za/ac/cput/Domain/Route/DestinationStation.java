@@ -1,5 +1,8 @@
 package za.ac.cput.Domain.Route;
 
+import java.util.Objects;
+
+//Determines the StopLocation
 public class DestinationStation extends Route
 {
     String stationId, stationName;
@@ -47,5 +50,19 @@ public class DestinationStation extends Route
                 ", routeName='" + routeName + '\'' +
                 ", locationId='" + locationId + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        DestinationStation that = (DestinationStation) o;
+        return stationId.equals(that.stationId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), stationId);
     }
 }

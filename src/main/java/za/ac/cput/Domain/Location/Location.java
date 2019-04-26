@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.Location;
 
+import java.util.Objects;
+
 public class Location
 {
     String locationName,locationNo;
@@ -42,5 +44,18 @@ public class Location
                 "locationName='" + locationName + '\'' +
                 ", LocationNo='" + locationNo + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return locationNo.equals(location.locationNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(locationNo);
     }
 }

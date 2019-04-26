@@ -1,5 +1,7 @@
 package za.ac.cput.Domain.Route;
 
+import java.util.Objects;
+
 public class Route
 {
 
@@ -56,5 +58,18 @@ public class Route
                 ", routeName='" + routeName + '\'' +
                 ", locationId='" + locationId + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Route route = (Route) o;
+        return routeNo.equals(route.routeNo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(routeNo);
     }
 }

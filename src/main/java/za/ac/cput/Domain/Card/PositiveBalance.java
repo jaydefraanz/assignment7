@@ -43,4 +43,6 @@ public class PositiveBalance extends BalanceCheck implements  Boarding{
                 ", cardNo='" + cardNo + '\'' +
                 "} " + super.toString();
     }
+
+
 }
