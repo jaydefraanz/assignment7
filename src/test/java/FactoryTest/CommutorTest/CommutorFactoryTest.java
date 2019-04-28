@@ -15,7 +15,7 @@ public class CommutorFactoryTest
     {
         String name = "Jay";
         String surn = "Program";
-        int card = 384373;
+        String card = "38437";
         int credit = 100;
 
         Commutor com = CommutorFactory.getCommutor(name,surn,card,credit);

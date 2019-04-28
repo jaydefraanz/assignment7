@@ -5,8 +5,7 @@ import java.util.Objects;
 public class BusDetails {
     String busNo, busName, busSeats;
 
-    public BusDetails() {
-    }
+
 
     public BusDetails(Builder builder) {
         this.busNo = builder.busNo;

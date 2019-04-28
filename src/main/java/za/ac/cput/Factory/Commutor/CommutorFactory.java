@@ -4,7 +4,7 @@ import za.ac.cput.Domain.Commutors.Commutor;
 
 public class CommutorFactory
 {
-    public static Commutor getCommutor(String name, String surname,int cardNO,int credit)
+    public static Commutor getCommutor(String name, String surname,String cardNO,int credit)
     {
         return new Commutor.Builder()
                 .name(name)
