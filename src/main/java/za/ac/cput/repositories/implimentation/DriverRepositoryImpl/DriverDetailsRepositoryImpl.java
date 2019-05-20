@@ -4,6 +4,7 @@ import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.repositories.DriverRepository.DriverDetailsRepository;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class DriverDetailsRepositoryImpl implements DriverDetailsRepository {
@@ -11,7 +12,7 @@ public class DriverDetailsRepositoryImpl implements DriverDetailsRepository {
     private static DriverDetailsRepository repository = null;
     private Set<DriverDetails> driverDetails;
 
-    private DriverDetailsRepositoryImpl(){this.driverDetails = new HashSet<>(); }
+    public DriverDetailsRepositoryImpl(){this.driverDetails = new HashSet<>(); }
 
     public static DriverDetailsRepository getRepository()
     {
@@ -21,27 +22,64 @@ public class DriverDetailsRepositoryImpl implements DriverDetailsRepository {
 
 
     @Override
-    public Set<DriverDetails> getAll() {
-        return null;
+    public Set<DriverDetails> getAll()
+    {
+        return driverDetails;
     }
 
     @Override
-    public DriverDetails create(DriverDetails driverDetails) {
-        return null;
+    public DriverDetails create(DriverDetails driverDetails)
+    {
+        this.driverDetails.add(driverDetails);
+        return driverDetails;
     }
 
     @Override
-    public DriverDetails update(DriverDetails driverDetails) {
-        return null;
+    public DriverDetails update(DriverDetails driverDetails)
+    {
+        Iterator<DriverDetails> it = this.driverDetails.iterator();
+
+        while(it.hasNext())
+        {
+            if(this.driverDetails.contains(driverDetails))
+            {
+                this.driverDetails.remove(driverDetails);
+                this.driverDetails.add(driverDetails);
+                break;
+            }
+            else
+            {
+                this.driverDetails.add(driverDetails);
+            }
+            it.next();
+        }
+        return driverDetails;
     }
 
     @Override
-    public void delete(String s) {
-
+    public void delete(String s)
+    {
+        for (DriverDetails driverDta: driverDetails)
+        {
+            if(driverDta.getIdNo() == s)
+            {
+                driverDetails.remove(driverDta);
+            }
+        }
     }
 
     @Override
-    public DriverDetails read(String s) {
-        return null;
+    public DriverDetails read(String s)
+    {
+        DriverDetails dd = new DriverDetails.Builder().build();
+
+        for (DriverDetails driverDta: driverDetails)
+        {
+            if(driverDta.getIdNo() == s)
+            {
+                dd = driverDta;
+            }
+        }
+        return dd;
     }
 }

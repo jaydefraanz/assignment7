@@ -24,7 +24,7 @@ public class PositiveBalance extends BalanceCheck implements  Boarding{
     public static class Builder extends BalanceCheck.Builder{
         int balance;
 
-        public Builder balance(int balance) {
+        public PositiveBalance.Builder balance(int balance) {
             this.balance = balance;
             return this;
         }

@@ -6,7 +6,7 @@ public class BalanceCheckFactory
 {
     public static BalanceCheck getBalanceCheck(int currentBalance)
     {
-        return new BalanceCheck.Builder()
+        return (BalanceCheck) new BalanceCheck.Builder()
                 .currentBalance(currentBalance)
                 .build();
     }

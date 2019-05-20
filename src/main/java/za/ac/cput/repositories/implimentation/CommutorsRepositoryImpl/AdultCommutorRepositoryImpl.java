@@ -4,6 +4,7 @@ import za.ac.cput.Domain.Commutors.Adult;
 import za.ac.cput.repositories.CommutorsRepository.AdultCommutorRepository;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class AdultCommutorRepositoryImpl implements AdultCommutorRepository {
@@ -11,7 +12,7 @@ public class AdultCommutorRepositoryImpl implements AdultCommutorRepository {
     private static AdultCommutorRepository repository = null;
     private Set<Adult> adults;
 
-    private AdultCommutorRepositoryImpl(){this.adults = new HashSet<>(); }
+    public AdultCommutorRepositoryImpl(){this.adults = new HashSet<>(); }
 
     public static AdultCommutorRepository getRepository()
     {
@@ -19,28 +20,66 @@ public class AdultCommutorRepositoryImpl implements AdultCommutorRepository {
         return repository;
     }
 
+
     @Override
     public Set<Adult> getAll() {
-        return null;
+        return adults;
     }
 
     @Override
-    public Adult create(Adult adult) {
-        return null;
+    public Adult create(Adult adult)
+    {
+        this.adults.add(adult);
+        return adult;
     }
 
     @Override
-    public Adult update(Adult adult) {
-        return null;
+    public Adult update(Adult adult)
+    {
+        Iterator<Adult> it = this.adults.iterator();
+
+        while(it.hasNext())
+        {
+            if(this.adults.contains(adult))
+            {
+                this.adults.remove(adult);
+                this.adults.add(adult);
+                break;
+            }
+            else
+            {
+                this.adults.add(adult);
+            }
+            it.next();
+        }
+        return adult;
     }
 
     @Override
-    public void delete(String s) {
-
+    public void delete(String s)
+    {
+        for (Adult adlt: adults)
+        {
+            if(adlt.getCardNo() == s)
+            {
+                adults.remove(adlt);
+            }
+        }
     }
 
     @Override
-    public Adult read(String s) {
-        return null;
+    public Adult read(String s)
+    {
+        Adult adts = new Adult.Builder().build();
+
+        for (Adult adlt: adults)
+        {
+            if(adlt.getCardNo() == s)
+            {
+                adts = adlt;
+            }
+        }
+
+        return adts;
     }
 }

@@ -17,10 +17,10 @@ public class Card
         return cardNo;
     }
 
-    public static class Builder {
+    public static class Builder extends AddCredit {
         String cardNo;
 
-        public Builder cardNo(String cardNo) {
+        public Card.Builder cardNo(String cardNo) {
             this.cardNo = cardNo;
             return this;
         }

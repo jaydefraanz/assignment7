@@ -4,6 +4,7 @@ import za.ac.cput.Domain.Route.DepartureStation;
 import za.ac.cput.repositories.RouteRepository.DepartureStationRepository;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class DepartureStationRepositoryImpl implements DepartureStationRepository {
@@ -11,7 +12,7 @@ public class DepartureStationRepositoryImpl implements DepartureStationRepositor
     private static DepartureStationRepository repository = null;
     private Set<DepartureStation> departureStations;
 
-    private DepartureStationRepositoryImpl(){this.departureStations = new HashSet<>(); }
+    public DepartureStationRepositoryImpl(){this.departureStations = new HashSet<>(); }
 
     public static DepartureStationRepository getRepository()
     {
@@ -21,26 +22,62 @@ public class DepartureStationRepositoryImpl implements DepartureStationRepositor
 
     @Override
     public Set<DepartureStation> getAll() {
-        return null;
+        return departureStations;
     }
 
     @Override
-    public DepartureStation create(DepartureStation departureStation) {
-        return null;
+    public DepartureStation create(DepartureStation departureStation)
+    {
+        departureStations.add(departureStation);
+        return departureStation;
     }
 
     @Override
-    public DepartureStation update(DepartureStation departureStation) {
-        return null;
+    public DepartureStation update(DepartureStation departureStation)
+    {
+        Iterator<DepartureStation> it = this.departureStations.iterator();
+
+        while(it.hasNext())
+        {
+            if(this.departureStations.contains(departureStation))
+            {
+                this.departureStations.remove(departureStation);
+                this.departureStations.add(departureStation);
+                break;
+            }
+            else
+            {
+                this.departureStations.add(departureStation);
+            }
+            it.next();
+        }
+        return departureStation;
     }
 
     @Override
-    public void delete(String s) {
-
+    public void delete(String s)
+    {
+        for (DepartureStation dept: departureStations)
+        {
+            if(dept.getStationId() == s)
+            {
+                departureStations.remove(dept);
+            }
+        }
     }
 
     @Override
-    public DepartureStation read(String s) {
-        return null;
+    public DepartureStation read(String s)
+    {
+        DepartureStation deptStation = new DepartureStation.Builder().build();
+
+        for (DepartureStation dept: departureStations)
+        {
+            if(dept.getStationId() == s)
+            {
+                deptStation = dept;
+            }
+        }
+        return deptStation;
     }
 }

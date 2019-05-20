@@ -10,7 +10,7 @@ import java.util.Set;
 public class BusDetailRepositoryImpl implements BusDetailsRepository {
 
     private static BusDetailsRepository repository = null;
-    public Set<BusDetails> busDetails;
+    private Set<BusDetails> busDetails;
 
     public BusDetailRepositoryImpl(){this.busDetails = new HashSet<>(); }
 
@@ -42,14 +42,12 @@ public class BusDetailRepositoryImpl implements BusDetailsRepository {
         {
            if(this.busDetails.contains(busDetails))
            {
-               System.out.println("updating details");
                this.busDetails.remove(busDetails);
                this.busDetails.add(busDetails);
                break;
            }
            else
            {
-               System.out.println("adding new details");
                this.busDetails.add(busDetails);
            }
            it.next();
@@ -80,7 +78,6 @@ public class BusDetailRepositoryImpl implements BusDetailsRepository {
                bdts = busDtail;
             }
         }
-
         return bdts;
     }
 }

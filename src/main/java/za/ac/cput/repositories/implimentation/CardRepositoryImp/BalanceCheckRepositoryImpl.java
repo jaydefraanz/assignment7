@@ -4,6 +4,7 @@ import za.ac.cput.Domain.Card.BalanceCheck;
 import za.ac.cput.repositories.CardRepository.BalanceCheckRepository;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class BalanceCheckRepositoryImpl implements BalanceCheckRepository {
@@ -11,7 +12,7 @@ public class BalanceCheckRepositoryImpl implements BalanceCheckRepository {
     private static BalanceCheckRepositoryImpl repository = null;
     private Set<BalanceCheck> balanceChecks;
 
-    private BalanceCheckRepositoryImpl(){this.balanceChecks = new HashSet<>(); }
+    public BalanceCheckRepositoryImpl(){this.balanceChecks = new HashSet<>(); }
 
     public static BalanceCheckRepository getRepository()
     {
@@ -21,26 +22,62 @@ public class BalanceCheckRepositoryImpl implements BalanceCheckRepository {
 
     @Override
     public Set<BalanceCheck> getAll() {
-        return null;
+        return balanceChecks;
     }
 
     @Override
-    public BalanceCheck create(BalanceCheck balanceCheck) {
-        return null;
+    public BalanceCheck create(BalanceCheck balanceCheck)
+    {
+        this.balanceChecks.add(balanceCheck);
+        return balanceCheck;
     }
 
     @Override
-    public BalanceCheck update(BalanceCheck balanceCheck) {
-        return null;
+    public BalanceCheck update(BalanceCheck balanceCheck)
+    {
+        Iterator<BalanceCheck> it = this.balanceChecks.iterator();
+
+        while(it.hasNext())
+        {
+            if(this.balanceChecks.contains(balanceCheck))
+            {
+                this.balanceChecks.remove(balanceCheck);
+                this.balanceChecks.add(balanceCheck);
+                break;
+            }
+            else
+            {
+                this.balanceChecks.add(balanceCheck);
+            }
+            it.next();
+        }
+        return balanceCheck;
     }
 
     @Override
-    public void delete(String s) {
+    public void delete(String s)
+    {
+        for (BalanceCheck bC: balanceChecks)
+        {
+            if(bC.getCardNo() == s)
+            {
+                balanceChecks.remove(bC);
+            }
+        }
 
     }
 
     @Override
-    public BalanceCheck read(String s) {
-        return null;
+    public BalanceCheck read(String s)
+    {
+        BalanceCheck balCheck = new BalanceCheck.Builder().build();
+        for (BalanceCheck bC: balanceChecks)
+        {
+            if(bC.getCardNo() == s)
+            {
+                balCheck = bC;
+            }
+        }
+        return balCheck;
     }
 }

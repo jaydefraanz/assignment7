@@ -20,7 +20,7 @@ public class BalanceCheck extends Card
     public static class Builder extends Card.Builder {
         int currentBalance;
 
-        public Builder currentBalance(int currentBalance) {
+        public Card.Builder currentBalance(int currentBalance) {
             this.currentBalance = currentBalance;
             return this;
         }
