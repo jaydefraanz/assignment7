@@ -14,7 +14,7 @@ public class DriverContactRepositoryImpl implements DriverContactRepository {
 
     public DriverContactRepositoryImpl(){this.driverContacts = new HashSet<>();}
 
-    private static DriverContactRepository getRepository()
+    public static DriverContactRepository getRepository()
     {
         if (repository == null) repository = new DriverContactRepositoryImpl();
         return  repository;

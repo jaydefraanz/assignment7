@@ -2,8 +2,7 @@ package za.ac.cput.Domain.Driver;
 
 import java.util.Objects;
 
-public class DriverDetails
-{
+public class DriverDetails extends DriverContact {
     String name,surname,idNo;
 
     public DriverDetails() {}
