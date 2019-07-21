@@ -68,16 +68,9 @@ public class BusDetailRepositoryImpl implements BusDetailsRepository {
     }
 
     @Override
-    public BusDetails read(String s)
-    {
-        BusDetails bdts = new BusDetails.Builder().build();
-        for (BusDetails busDtail: busDetails)
-        {
-            if(busDtail.getBusNo() == s)
-            {
-               bdts = busDtail;
-            }
-        }
-        return bdts;
+    public BusDetails read(String s) {
+        return null;
     }
+
+
 }

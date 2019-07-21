@@ -1,7 +1,6 @@
 package za.ac.cput.Service.Implementation.Driver;
 
 import za.ac.cput.Domain.Driver.AssignedBus;
-import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.Service.Driver.AssignedBusService;
 import za.ac.cput.repositories.DriverRepository.AssignedBusRepository;
 import za.ac.cput.repositories.implimentation.DriverRepositoryImpl.AssignedBusRepositoryImpl;
@@ -42,7 +41,7 @@ public class AssignedBusServiceImpl implements AssignedBusService {
     }
 
     @Override
-    public DriverDetails read(String s) {
+    public AssignedBus read(String s) {
         return repository.read(s);
     }
 }

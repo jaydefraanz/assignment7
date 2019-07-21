@@ -76,6 +76,6 @@ public class AddCreditRepositoryImpl implements AddCreditRepository {
             }
         }
 
-        return adCr;
+        return (AddCredit) adCr;
     }
 }

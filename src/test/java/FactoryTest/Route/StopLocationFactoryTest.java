@@ -1,11 +1,11 @@
 package FactoryTest.Route;
 
-import junit.framework.Assert;
 import org.junit.Test;
 import za.ac.cput.Domain.Route.StopLocation;
 import za.ac.cput.Factory.Route.StopLocationFactory;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+
 
 public class StopLocationFactoryTest {
 
@@ -16,7 +16,7 @@ public class StopLocationFactoryTest {
 
         StopLocation sl = StopLocationFactory.getStopLocation(stopName);
 
-        Assert.assertNotNull(sl.getStopName());
+        assertNotNull(sl.getStopName());
 
     }
 }

@@ -1,7 +1,6 @@
 package za.ac.cput.Service.Implementation.Commutors;
 
 import za.ac.cput.Domain.Commutors.Adult;
-import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.Service.Commutors.AdultCommutorService;
 import za.ac.cput.repositories.CommutorsRepository.AdultCommutorRepository;
 import za.ac.cput.repositories.implimentation.CommutorsRepositoryImpl.AdultCommutorRepositoryImpl;
@@ -42,7 +41,7 @@ public class AdultCommutorServiceImpl implements AdultCommutorService {
     }
 
     @Override
-    public DriverDetails read(String s) {
+    public Adult read(String s) {
         return repository.read(s);
     }
 }

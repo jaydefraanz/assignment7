@@ -1,7 +1,6 @@
 package za.ac.cput.Service.Implementation.Card;
 
 import za.ac.cput.Domain.Card.AddCredit;
-import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.Service.Card.AddCreditService;
 import za.ac.cput.repositories.CardRepository.AddCreditRepository;
 import za.ac.cput.repositories.implimentation.CardRepositoryImp.AddCreditRepositoryImpl;
@@ -42,7 +41,7 @@ public class AddCreditServiceImpl implements AddCreditService {
     }
 
     @Override
-    public DriverDetails read(String s) {
+    public AddCredit read(String s) {
         return repository.read(s);
     }
 }

@@ -1,7 +1,6 @@
 package za.ac.cput.Service.Implementation.Card;
 
 import za.ac.cput.Domain.Card.PaymentDetail;
-import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.Service.Card.PaymentDetailService;
 import za.ac.cput.repositories.CardRepository.PaymentDetailRepository;
 import za.ac.cput.repositories.implimentation.CardRepositoryImp.PaymentDetailRepositoryImpl;
@@ -42,7 +41,7 @@ public class PaymentDetailsServiceImpl  implements PaymentDetailService {
     }
 
     @Override
-    public DriverDetails read(String s) {
+    public PaymentDetail read(String s) {
         return repository.read(s);
     }
 }

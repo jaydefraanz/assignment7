@@ -1,6 +1,5 @@
 package za.ac.cput.repositories.implimentation.CommutorsRepositoryImpl;
 
-import za.ac.cput.Domain.Commutors.Adult;
 import za.ac.cput.Domain.Commutors.Child;
 import za.ac.cput.repositories.CommutorsRepository.ChildCommutorRepository;
 
@@ -79,6 +78,7 @@ public class ChildCommutorRepositoryImpl implements ChildCommutorRepository {
                 chld = child;
             }
         }
+
 
         return chld;
     }

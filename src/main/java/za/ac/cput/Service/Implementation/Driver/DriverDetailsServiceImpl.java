@@ -3,12 +3,13 @@ package za.ac.cput.Service.Implementation.Driver;
 import za.ac.cput.Domain.Driver.DriverContact;
 import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.Service.Driver.DriverContactService;
+import za.ac.cput.Service.Driver.DriverDetailsService;
 import za.ac.cput.repositories.DriverRepository.DriverDetailsRepository;
 import za.ac.cput.repositories.implimentation.DriverRepositoryImpl.DriverDetailsRepositoryImpl;
 
 import java.util.Set;
 
-public class DriverDetailsServiceImpl  implements DriverContactService {
+public class DriverDetailsServiceImpl  implements DriverDetailsService {
 
     private static DriverDetailsServiceImpl service = null;
     private DriverDetailsRepository repository;
@@ -35,22 +36,14 @@ public class DriverDetailsServiceImpl  implements DriverContactService {
     }
 
     @Override
-    public DriverContact create(DriverContact type) {
-        return null;
-    }
-
-    @Override
-    public DriverContact update(DriverContact type) {
-        return null;
-    }
-
-    @Override
     public void delete(String s) {
-        repository.delete(s);
+
     }
 
     @Override
     public DriverDetails read(String s) {
-        return repository.read(s);
+        return null;
     }
+
+
 }

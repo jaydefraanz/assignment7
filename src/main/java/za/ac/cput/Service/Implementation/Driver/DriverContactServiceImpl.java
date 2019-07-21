@@ -1,7 +1,6 @@
 package za.ac.cput.Service.Implementation.Driver;
 
 import za.ac.cput.Domain.Driver.DriverContact;
-import za.ac.cput.Domain.Driver.DriverDetails;
 import za.ac.cput.Service.Driver.DriverContactService;
 import za.ac.cput.repositories.DriverRepository.DriverContactRepository;
 import za.ac.cput.repositories.implimentation.DriverRepositoryImpl.DriverContactRepositoryImpl;
@@ -22,7 +21,7 @@ public class DriverContactServiceImpl implements DriverContactService {
     }
 
     @Override
-    public Set<DriverDetails> getAll() {
+    public Set<DriverContact> getAll() {
         return repository.getAll();
     }
 
@@ -42,7 +41,7 @@ public class DriverContactServiceImpl implements DriverContactService {
     }
 
     @Override
-    public DriverDetails read(String s) {
+    public DriverContact read(String s) {
         return repository.read(s);
     }
 }
