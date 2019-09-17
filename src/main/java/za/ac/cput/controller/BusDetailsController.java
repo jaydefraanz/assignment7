@@ -3,19 +3,18 @@ package za.ac.cput.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import za.ac.cput.Domain.Bus.BusDetails;
-import za.ac.cput.Service.Bus.BusDetailsService;
-
-import java.util.Set;
+import za.ac.cput.domain.bus.BusDetails;
+import za.ac.cput.service.bus.BusDetailsService;
 
 @RestController
 @RequestMapping("/busdetails")
 public class BusDetailsController {
+
     @Autowired
-    @Qualifier("BusServiceImpl")
+    @Qualifier("BusDetailsServiceImpl")
     private BusDetailsService service;
 
-    @PostMapping("/create")
+    @GetMapping("/create/{busName}")
     @ResponseBody
     public BusDetails create(BusDetails busDetails)
     {
@@ -29,5 +28,9 @@ public class BusDetailsController {
     {
         service.delete(id);
     }
+
+    @GetMapping("/update")
+    @ResponseBody
+    public BusDetails update(@PathVariable BusDetails id){return service.update(id);}
 
 }
